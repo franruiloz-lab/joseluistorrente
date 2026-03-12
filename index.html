@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torrente — El Brazo Tonto de la Ley | Santiago Segura</title>
+    <meta name="description" content="Todo sobre Torrente, el personaje de Santiago Segura. Saga completa, Torrente Presidente 2026, reparto de todas las películas y dónde verlas.">
+    <meta name="keywords" content="torrente, torrente 6, torrente presidente, santiago segura, jose luis torrente, saga torrente, torrente el brazo tonto de la ley, personajes torrente, donde ver torrente">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --negro:        #0A0A0A;
+            --asfalto:      #141414;
+            --gris:         #202020;
+            --gris-claro:   #333333;
+            --cerveza:      #C8952A;
+            --cerveza-claro:#E8B84B;
+            --rojo:         #C41E3A;
+            --rojo-oscuro:  #7A1224;
+            --blanco-sucio: #E8DCC8;
+            --texto:        #C0B49A;
+            --texto-dim:    #6E6254;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--negro);
+            color: var(--texto);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* GRAIN */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* ── NAV ─────────────────────────────── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 200;
+            background: rgba(10,10,10,0.96);
+            border-bottom: 2px solid var(--cerveza);
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 58px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-logo {
+            font-family: 'Anton', sans-serif;
+            font-size: 1.4rem;
+            color: var(--cerveza);
+            letter-spacing: 0.05em;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav ul a {
+            color: var(--texto-dim);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        nav ul a:hover { color: var(--cerveza); }
+
+        /* ── HERO ─────────────────────────────── */
+        .hero {
+            min-height: 100vh;
+            background: var(--negro) url('fondo home.jpg') right top / cover no-repeat;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: left;
+            padding: 7rem 2rem 5rem 5vw;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to top, var(--negro) 0%, rgba(10,10,10,0.55) 50%, rgba(10,10,10,0.45) 100%),
+                radial-gradient(ellipse 80% 50% at 50% 40%, rgba(200,149,42,0.07) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* lineas de fondo estilo poster */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 3px,
+                rgba(255,255,255,0.012) 3px,
+                rgba(255,255,255,0.012) 4px
+            );
+            pointer-events: none;
+        }
+
+        .hero-eyebrow {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--rojo);
+            margin-bottom: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(6rem, 20vw, 16rem);
+            line-height: 0.88;
+            color: var(--cerveza);
+            letter-spacing: -0.01em;
+            text-shadow:
+                6px 6px 0 rgba(0,0,0,0.9),
+                0 0 100px rgba(200,149,42,0.12);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-sub {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.1rem, 3.5vw, 2.2rem);
+            color: var(--blanco-sucio);
+            letter-spacing: 0.35em;
+            margin-top: 0.6rem;
+            opacity: 0.75;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-line {
+            width: 60px;
+            height: 3px;
+            background: var(--rojo);
+            margin: 2rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-claim {
+            font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+            font-weight: 300;
+            color: var(--texto-dim);
+            max-width: 540px;
+            line-height: 1.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-claim strong {
+            color: var(--texto);
+            font-weight: 600;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 0.8rem 2.2rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--cerveza);
+            color: var(--negro);
+        }
+
+        .btn-primary:hover { background: var(--cerveza-claro); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--cerveza);
+            border: 2px solid var(--cerveza);
+        }
+
+        .btn-secondary:hover {
+            background: var(--cerveza);
+            color: var(--negro);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--texto-dim);
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            animation: bounce 2.5s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50%       { transform: translateX(-50%) translateY(7px); }
+        }
+
+        /* ── LAYOUT HELPERS ───────────────────── */
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 7rem 0;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--rojo);
+            margin-bottom: 0.6rem;
+        }
+
+        .section-title {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1;
+            color: var(--blanco-sucio);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title span { color: var(--cerveza); }
+
+        .sep {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gris-claro) 30%, var(--gris-claro) 70%, transparent);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ── QUIÉN ES ─────────────────────────── */
+        .quien-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 4rem;
+            align-items: start;
+            margin-top: 3rem;
+        }
+
+        .quien-text p {
+            font-size: 1rem;
+            line-height: 1.95;
+            color: var(--texto);
+            margin-bottom: 1.4rem;
+        }
+
+        .quien-text p:first-child::first-letter {
+            font-family: 'Anton', sans-serif;
+            font-size: 3.2rem;
+            line-height: 0.85;
+            float: left;
+            margin-right: 0.08em;
+            margin-bottom: -0.05em;
+            color: var(--cerveza);
+        }
+
+        /* FICHA POLICIAL */
+        .police-file {
+            background: var(--asfalto);
+            border: 1px solid var(--gris-claro);
+            position: relative;
+        }
+
+        .police-file-header {
+            background: var(--rojo);
+            padding: 0.6rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .police-file-header span {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .police-file table {
+            width: 100%;
+            border-collapse: collapse;
+            padding: 0.5rem 0;
+        }
+
+        .police-file tr {
+            border-bottom: 1px solid var(--gris);
+        }
+
+        .police-file tr:last-child { border-bottom: none; }
+
+        .police-file td {
+            padding: 0.65rem 1.2rem;
+            font-size: 0.875rem;
+            vertical-align: top;
+        }
+
+        .police-file td:first-child {
+            color: var(--texto-dim);
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 600;
+            width: 42%;
+            padding-top: 0.7rem;
+        }
+
+        .police-file td:last-child {
+            color: var(--blanco-sucio);
+            font-weight: 400;
+        }
+
+        /* FRASES */
+        .frases-wrap { margin-top: 4.5rem; }
+
+        .frases-sub {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--blanco-sucio);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .frases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1px;
+            background: var(--gris);
+            border: 1px solid var(--gris);
+        }
+
+        .frase-card {
+            background: var(--asfalto);
+            padding: 1.5rem 1.5rem 1.5rem 2rem;
+            border-left: 3px solid var(--cerveza);
+            position: relative;
+        }
+
+        .frase-card::before {
+            content: '"';
+            font-family: 'Anton', sans-serif;
+            font-size: 4rem;
+            color: var(--gris-claro);
+            position: absolute;
+            top: 0.2rem;
+            left: 0.5rem;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .frase-card p {
+            font-size: 0.9rem;
+            line-height: 1.75;
+            color: var(--texto);
+            font-style: italic;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── TORRENTE PRESIDENTE ──────────────── */
+        .presidente-section {
+            background: var(--asfalto);
+            border-top: 3px solid var(--rojo);
+            border-bottom: 3px solid var(--rojo);
+        }
+
+        .presidente-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .presidente-badge {
+            display: inline-block;
+            background: var(--rojo);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .presidente-title {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            line-height: 0.95;
+            color: var(--blanco-sucio);
+            margin-bottom: 0.4rem;
+        }
+
+        .presidente-subtitle {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            color: var(--cerveza);
+            letter-spacing: 0.12em;
+            margin-bottom: 1.5rem;
+        }
+
+        .presidente-text {
+            font-size: 0.975rem;
+            line-height: 1.85;
+            color: var(--texto);
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--gris-claro);
+        }
+
+        .stat-box {
+            background: var(--gris);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'Anton', sans-serif;
+            font-size: 2.2rem;
+            color: var(--cerveza);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-lbl {
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--texto-dim);
+            margin-top: 0.4rem;
+        }
+
+        /* ── PELÍCULAS ────────────────────────── */
+        .peliculas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .peli-card {
+            background: var(--asfalto);
+            border: 1px solid var(--gris-claro);
+            transition: border-color 0.2s, transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .peli-card:hover {
+            border-color: var(--cerveza);
+            transform: translateY(-3px);
+        }
+
+        .peli-card.is-new {
+            border-color: var(--rojo-oscuro);
+        }
+
+        .peli-card.is-new:hover {
+            border-color: var(--rojo);
+        }
+
+        .peli-header {
+            background: var(--gris);
+            padding: 0.6rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid var(--gris-claro);
+        }
+
+        .peli-card.is-new .peli-header {
+            background: var(--rojo-oscuro);
+        }
+
+        .peli-num {
+            font-family: 'Anton', sans-serif;
+            font-size: 2rem;
+            color: var(--cerveza);
+            line-height: 1;
+        }
+
+        .peli-card.is-new .peli-num { color: #fff; }
+
+        .peli-meta {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .peli-year {
+            font-size: 0.7rem;
+            color: var(--texto-dim);
+            letter-spacing: 0.12em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .peli-card.is-new .peli-year { color: rgba(255,255,255,0.5); }
+
+        .peli-estreno-tag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cerveza);
+            background: var(--negro);
+            padding: 0.1rem 0.4rem;
+            margin-top: 0.2rem;
+            display: inline-block;
+        }
+
+        .peli-body {
+            padding: 1.3rem 1.3rem 1.4rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .peli-titulo {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--blanco-sucio);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .peli-card.is-new .peli-titulo { color: var(--cerveza); }
+
+        .peli-desc {
+            font-size: 0.85rem;
+            line-height: 1.65;
+            color: var(--texto-dim);
+            flex: 1;
+        }
+
+        .peli-reparto {
+            font-size: 0.75rem;
+            color: var(--texto-dim);
+            padding-top: 0.6rem;
+            border-top: 1px solid var(--gris);
+        }
+
+        .peli-reparto strong { color: var(--texto); font-weight: 500; }
+
+        .peli-taquilla {
+            font-size: 0.72rem;
+            color: var(--texto-dim);
+            padding-top: 0.4rem;
+        }
+
+        .peli-taquilla b { color: var(--cerveza); }
+
+        /* ── DÓNDE VER ────────────────────────── */
+        .donde-intro {
+            font-size: 0.975rem;
+            color: var(--texto-dim);
+            max-width: 580px;
+            line-height: 1.85;
+            margin-top: 1.2rem;
+            margin-bottom: 0;
+        }
+
+        .plataformas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1px;
+            background: var(--gris-claro);
+            margin-top: 3rem;
+            border: 1px solid var(--gris-claro);
+        }
+
+        .plat-card {
+            background: var(--asfalto);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .plat-card:hover { background: var(--gris); }
+
+        .plat-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+
+        .plat-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--blanco-sucio);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .plat-note {
+            font-size: 0.72rem;
+            color: var(--texto-dim);
+            margin-top: 0.3rem;
+        }
+
+        /* ── DISFRAZ ──────────────────────────── */
+        .disfraz-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 4rem;
+            margin-top: 3rem;
+            align-items: start;
+        }
+
+        .disfraz-intro {
+            font-size: 0.975rem;
+            color: var(--texto-dim);
+            line-height: 1.85;
+            margin-bottom: 1.5rem;
+        }
+
+        .disfraz-list {
+            list-style: none;
+        }
+
+        .disfraz-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid var(--gris);
+            font-size: 0.925rem;
+            color: var(--texto);
+        }
+
+        .disfraz-list li:last-child { border-bottom: none; }
+
+        .disfraz-list li span:first-child {
+            font-size: 1.15rem;
+            flex-shrink: 0;
+            margin-top: 0.05rem;
+        }
+
+        .curiosidad-card {
+            background: var(--asfalto);
+            border: 1px solid var(--gris-claro);
+            padding: 1.3rem 1.5rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+        .curiosidad-row .curiosidad-card {
+            margin-bottom: 0;
+            height: 100%;
+        }
+
+        .curiosidad-card:hover { border-color: var(--gris-claro); }
+        .curiosidad-card:last-child { margin-bottom: 0; }
+
+        .curiosidad-card h4 {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--cerveza);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+        }
+
+        .curiosidad-card p {
+            font-size: 0.855rem;
+            line-height: 1.72;
+            color: var(--texto-dim);
+        }
+
+        /* ── FOOTER ───────────────────────────── */
+        footer {
+            background: var(--asfalto);
+            border-top: 2px solid var(--gris-claro);
+            padding: 3.5rem 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Anton', sans-serif;
+            font-size: 2.2rem;
+            color: var(--cerveza);
+            letter-spacing: 0.05em;
+        }
+
+        .footer-text {
+            font-size: 0.78rem;
+            color: var(--texto-dim);
+            margin-top: 1rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-keywords {
+            color: var(--texto-dim);
+            opacity: 0.5;
+            margin-top: 1rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── CARDS ENLAZADAS ─────────────────── */
+        .peli-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .peli-ver-mas {
+            margin-top: auto;
+            padding-top: 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--cerveza);
+            opacity: 0;
+            transform: translateX(-4px);
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .peli-card-link:hover .peli-ver-mas {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ── RESPONSIVE ───────────────────────── */
+        @media (max-width: 820px) {
+            nav ul { display: none; }
+            .quien-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .presidente-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .disfraz-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .section { padding: 5rem 0; }
+            .wrap { padding: 0 1.25rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: clamp(5rem, 25vw, 8rem); }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* ── COUNTDOWN HOME ──────────────────────── */
+        .idx-countdown-section {
+            padding: 1rem 0 1.5rem;
+        }
+        .idx-countdown-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--rojo);
+            margin-bottom: 0.75rem;
+        }
+        .idx-countdown-timer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.5rem;
+        }
+        .idx-cd-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .idx-cd-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3.5rem, 10vw, 6rem);
+            color: var(--blanco-sucio);
+            line-height: 1;
+        }
+        .idx-cd-lbl {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(230,225,210,0.5);
+            margin-top: 0.25rem;
+        }
+        .idx-cd-sep {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            color: var(--rojo);
+            line-height: 1;
+            margin-bottom: 1.2rem;
+        }
+        .idx-estreno {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+        .idx-estreno-icon { font-size: 2.5rem; }
+        .idx-estreno-titulo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            color: var(--rojo);
+            letter-spacing: 0.05em;
+        }
+        .idx-estreno-fecha {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            color: var(--blanco-sucio);
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="#" class="nav-logo">TORRENTE</a>
+        <ul>
+            <li><a href="#quien-es">El personaje</a></li>
+            <li><a href="#presidente">Torrente 6</a></li>
+            <li><a href="#peliculas">Películas</a></li>
+            <li><a href="#donde-ver">Dónde ver</a></li>
+            <li><a href="#disfraz">Curiosidades</a></li>
+        </ul>
+    </nav>
+
+    <!-- ── HERO ───────────────────────────────── -->
+    <header class="hero">
+        <p class="hero-eyebrow">Santiago Segura — 1998 · 2026</p>
+        <h1 class="hero-title">TORRENTE</h1>
+        <div class="idx-countdown-section">
+            <div class="idx-countdown-label">Torrente Presidente — Estreno 13 de marzo de 2026</div>
+            <div class="idx-countdown-timer" id="idx-countdown">
+                <div class="idx-cd-unit"><span class="idx-cd-num" id="idx-cd-h">00</span><span class="idx-cd-lbl">horas</span></div>
+                <span class="idx-cd-sep">:</span>
+                <div class="idx-cd-unit"><span class="idx-cd-num" id="idx-cd-m">00</span><span class="idx-cd-lbl">min</span></div>
+                <span class="idx-cd-sep">:</span>
+                <div class="idx-cd-unit"><span class="idx-cd-num" id="idx-cd-s">00</span><span class="idx-cd-lbl">seg</span></div>
+            </div>
+            <div class="idx-estreno" id="idx-estreno">
+                <span class="idx-estreno-icon">🎬</span>
+                <div class="idx-estreno-titulo">¡Amiguetes, ha llegado el día!</div>
+                <div class="idx-estreno-fecha">13 de marzo de 2026 — Torrente Presidente ya está en cines</div>
+            </div>
+        </div>
+        <p class="hero-sub">El Brazo Tonto de la Ley</p>
+        <div class="hero-line"></div>
+        <p class="hero-claim">
+            El policía más <strong>sucio, vago y corrupto</strong> del cine español.<br>
+            Carabanchel, Madrid. Seis películas. Ningún arrepentimiento.
+        </p>
+        <div class="hero-ctas">
+            <a href="#peliculas" class="btn btn-primary">Ver la saga completa</a>
+            <a href="#presidente" class="btn btn-secondary">Torrente 6: Presidente</a>
+        </div>
+        <div class="hero-scroll">↓ scroll</div>
+    </header>
+
+    <!-- ── QUIÉN ES TORRENTE ───────────────────── -->
+    <section class="section" id="quien-es">
+        <div class="wrap">
+            <div class="section-label">El personaje</div>
+            <h2 class="section-title">¿Quién es <span>José Luis Torrente</span>?</h2>
+
+            <div class="quien-grid">
+                <div class="quien-text">
+                    <p>
+                        José Luis Torrente es el policía más famoso —y más corrupto— del cine español.
+                        Creado y protagonizado por Santiago Segura, el personaje debutó en 1998 y se convirtió
+                        en el antihéroe por excelencia de la cultura popular española: un tipo que no tiene
+                        ni un solo rasgo heroico, y que por eso mismo resulta imposible de olvidar.
+                    </p>
+                    <p>
+                        Ex inspector de policía, machista, borrachín y fan incondicional del Atlético de Madrid,
+                        Torrente vive en el barrio madrileño de Carabanchel rodeado de cerveza, palillos y una
+                        lealtad inquebrantable a sus propios vicios. Lo que Santiago Segura observó en un
+                        restaurante chino de Madrid —un tipo grosero, desordenado, orgulloso de su ignorancia—
+                        se convirtió en la saga de cine español más taquillera de la historia.
+                    </p>
+                    <p>
+                        Su grandeza está precisamente en su miseria: Torrente no aprende, no mejora, no redime.
+                        Es un espejo incómodo y descaradamente cómico de ciertos tipos humanos que todos,
+                        de un modo u otro, reconocemos.
+                    </p>
+                </div>
+
+                <div class="police-file">
+                    <div class="police-file-header">
+                        <span>🏅 Expediente policial</span>
+                    </div>
+                    <table>
+                        <tr><td>Nombre completo</td><td>José Luis Torrente</td></tr>
+                        <tr><td>Ocupación</td><td>Ex inspector de policía</td></tr>
+                        <tr><td>Barrio</td><td>Carabanchel, Madrid</td></tr>
+                        <tr><td>Aficiones</td><td>Cerveza, Atlético de Madrid</td></tr>
+                        <tr><td>Seña distintiva</td><td>Palillo en la boca</td></tr>
+                        <tr><td>Vehículo</td><td>Seat Panda (siniestro total)</td></tr>
+                        <tr><td>Creado por</td><td>Santiago Segura</td></tr>
+                        <tr><td>Primera aparición</td><td>1998 — Torrente 1</td></tr>
+                        <tr><td>Entregas</td><td>6 películas (1998–2026)</td></tr>
+                        <tr><td>Estado</td><td>En activo. Sin cargos pendientes.</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- FRASES -->
+            <div class="frases-wrap">
+                <div class="section-label">Frases célebres</div>
+                <div class="frases-sub">Las perlas de Torrente</div>
+                <div class="frases-grid">
+                    <div class="frase-card">
+                        <p>El Fary es Dios.</p>
+                    </div>
+                    <div class="frase-card">
+                        <p>Mira, si es pa' dar el gustillo... tú me la meneas a mí, yo te la meneo a ti. Es pa' aliviar tensiones... ¿Nos hacemos unas pajillas?</p>
+                    </div>
+                    <div class="frase-card">
+                        <p>¿Que es mala? ¿La droga es mala? Mira, aquí está la droga. ¿Te hace algo? ¿Te muerde, te pega, te araña? ¿Te salta y te coge de los huevecillos? Qué va a ser mala, hombre.</p>
+                    </div>
+                    <div class="frase-card">
+                        <p>Con la experiencia que tengo, karate, jiu-jitsu... no vale pa' ná. Una buena patá en los cojones.</p>
+                    </div>
+                    <div class="frase-card">
+                        <p>Chaval, tú eres tonto, pero tonto, tonto... tonto del culo.</p>
+                    </div>
+                    <div class="frase-card">
+                        <p>Vamos a ver, chaval, hay dos tipos de hombres: los que se lavan las manos antes de mear y los que se las lavan después. Yo me las lavo antes, porque mi herramienta es sagrada.</p>
+                    </div>
+                    <div class="frase-card">
+                        <p>Ahora te vas a comer esto y vas a dejar el plato limpio. ¡Que no me gusta fregar, eh!</p>
+                    </div>
+                    <div class="frase-card">
+                        <p>A ver si te enteras, chaval, que El Fary es el creador de la música. Lo demás es ruido.</p>
+                    </div>
+                    <div class="frase-card">
+                        <p>Yo por el Atleti, mato. ¡Mato!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- ── TORRENTE PRESIDENTE ─────────────────── -->
+    <section class="section presidente-section" id="presidente">
+        <div class="wrap">
+            <div class="presidente-grid">
+                <div>
+                    <span class="presidente-badge">⚡ Estreno 2026</span>
+                    <h2 class="presidente-title">TORRENTE:<br>PRESIDENTE</h2>
+                    <p class="presidente-subtitle">Torrente 6</p>
+                    <p class="presidente-text">
+                        La entrega más política —y más caótica— de la saga. José Luis Torrente da el
+                        paso más absurdo de su vida: se lanza a la política española. Con los mismos métodos
+                        de siempre, los mismos escrúpulos de siempre y los mismos resultados de siempre.
+                        Santiago Segura regresa al papel que lo hizo eterno.
+                    </p>
+                    <a href="#donde-ver" class="btn btn-primary">¿Dónde verla?</a>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-num">6ª</span>
+                        <div class="stat-lbl">Entrega de la saga</div>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">2026</span>
+                        <div class="stat-lbl">Año de estreno</div>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">28</span>
+                        <div class="stat-lbl">Años de saga</div>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">#1</span>
+                        <div class="stat-lbl">Saga española</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── LAS PELÍCULAS ──────────────────────── -->
+    <section class="section" id="peliculas">
+        <div class="wrap">
+            <div class="section-label">La saga completa</div>
+            <h2 class="section-title">Todas las <span>películas de Torrente</span></h2>
+
+            <div class="peliculas-grid">
+
+                <a href="torrente-1.html" class="peli-card peli-card-link">
+                    <div class="peli-header">
+                        <span class="peli-num">1</span>
+                        <div class="peli-meta"><span class="peli-year">1998</span></div>
+                    </div>
+                    <div class="peli-body">
+                        <div class="peli-titulo">El Brazo Tonto de la Ley</div>
+                        <div class="peli-desc">El debut de Torrente. Un ex policía corrupto de Carabanchel que quiere ligar con su vecina acaba envuelto en una trama de narcotráfico. La película española más taquillera de su época.</div>
+                        <div class="peli-reparto">Reparto: <strong>Santiago Segura, Javier Cámara, Neus Asensi, Tony Leblanc, Gabino Diego</strong></div>
+                        <div class="peli-taquilla">Taquilla: <b>Récord histórico del cine español en 1998</b></div>
+                        <div class="peli-ver-mas">Ver sinopsis, trailer y reparto →</div>
+                    </div>
+                </a>
+
+                <a href="torrente-2.html" class="peli-card peli-card-link">
+                    <div class="peli-header">
+                        <span class="peli-num">2</span>
+                        <div class="peli-meta"><span class="peli-year">2001</span></div>
+                    </div>
+                    <div class="peli-body">
+                        <div class="peli-titulo">Misión en Marbella</div>
+                        <div class="peli-desc">Torrente cambia Carabanchel por Marbella. Se ve envuelto en un caso de terrorismo internacional con los mismos métodos ineptos de siempre. Superó en taquilla a la primera entrega.</div>
+                        <div class="peli-reparto">Reparto: <strong>Santiago Segura, Gabino Diego, José Mota, Jordi Mollà, Yvonne Sciò</strong></div>
+                        <div class="peli-taquilla">Taquilla: <b>Nuevo récord del cine español en 2001</b></div>
+                        <div class="peli-ver-mas">Ver sinopsis, trailer y reparto →</div>
+                    </div>
+                </a>
+
+                <a href="torrente-3.html" class="peli-card peli-card-link">
+                    <div class="peli-header">
+                        <span class="peli-num">3</span>
+                        <div class="peli-meta"><span class="peli-year">2005</span></div>
+                    </div>
+                    <div class="peli-body">
+                        <div class="peli-titulo">El Protector</div>
+                        <div class="peli-desc">Torrente se reconvierte en guardaespaldas de una cantante latina. El personaje da el salto a aventuras internacionales sin perder ni un gramo de su esencia barriobajera.</div>
+                        <div class="peli-reparto">Reparto: <strong>Santiago Segura, José Mota, Ángel Alcázar, Jesulín de Ubrique</strong></div>
+                        <div class="peli-ver-mas">Ver sinopsis, trailer y reparto →</div>
+                    </div>
+                </a>
+
+                <a href="torrente-4.html" class="peli-card peli-card-link">
+                    <div class="peli-header">
+                        <span class="peli-num">4</span>
+                        <div class="peli-meta"><span class="peli-year">2011</span></div>
+                    </div>
+                    <div class="peli-body">
+                        <div class="peli-titulo">Lethal Crisis</div>
+                        <div class="peli-desc">En plena crisis económica española, Torrente aterriza en Las Vegas para dar el pelotazo de su vida. La entrega más costosa en producción de toda la saga.</div>
+                        <div class="peli-reparto">Reparto: <strong>Santiago Segura, Carlos Areces, Najwa Nimri, Gonzalo de Castro</strong></div>
+                        <div class="peli-ver-mas">Ver sinopsis, trailer y reparto →</div>
+                    </div>
+                </a>
+
+                <a href="torrente-5.html" class="peli-card peli-card-link">
+                    <div class="peli-header">
+                        <span class="peli-num">5</span>
+                        <div class="peli-meta"><span class="peli-year">2014</span></div>
+                    </div>
+                    <div class="peli-body">
+                        <div class="peli-titulo">Operación Eurovegas</div>
+                        <div class="peli-desc">El atraco del siglo. Torrente lidera una banda de ineptos para asaltar el mayor casino del mundo. La entrega más coral y gamberra de la saga.</div>
+                        <div class="peli-reparto">Reparto: <strong>Santiago Segura, Julián López, Carlos Areces, Silvia Alonso, Rossy de Palma</strong></div>
+                        <div class="peli-ver-mas">Ver sinopsis, trailer y reparto →</div>
+                    </div>
+                </a>
+
+                <a href="torrente-6.html" class="peli-card is-new peli-card-link">
+                    <div class="peli-header" style="background: var(--rojo-oscuro);">
+                        <span class="peli-num" style="color:#fff;">6</span>
+                        <div class="peli-meta">
+                            <span class="peli-year" style="color:rgba(255,255,255,0.5);">2026</span>
+                            <span class="peli-estreno-tag">En cartelera</span>
+                        </div>
+                    </div>
+                    <div class="peli-body">
+                        <div class="peli-titulo" style="color:var(--cerveza);">Torrente Presidente</div>
+                        <div class="peli-desc">La entrega más esperada. Torrente se lanza a la política española. Santiago Segura regresa para llevar al personaje al absurdo más institucional. La campaña electoral nunca fue tan sucia.</div>
+                        <div class="peli-reparto">Reparto: <strong>Santiago Segura y reparto por confirmar</strong></div>
+                        <div class="peli-taquilla" style="color:var(--cerveza);">⚡ Estreno 2026 — Torrente Presidente</div>
+                        <div class="peli-ver-mas" style="color:var(--cerveza);">Ver ficha completa →</div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- ── DÓNDE VER TORRENTE ─────────────────── -->
+    <section class="section" id="donde-ver">
+        <div class="wrap">
+            <div class="section-label">Ver torrente online</div>
+            <h2 class="section-title">¿Dónde ver <span>Torrente</span>?</h2>
+            <p class="donde-intro">
+                Las películas de la saga Torrente están disponibles en las principales plataformas de
+                streaming y alquiler digital. La disponibilidad varía según entrega y región.
+                Comprueba en cada plataforma qué entregas están disponibles en tu país.
+            </p>
+
+            <div class="plataformas-grid">
+                <div class="plat-card">
+                    <span class="plat-icon">📺</span>
+                    <div class="plat-name">Netflix</div>
+                    <div class="plat-note">Consultar disponibilidad</div>
+                </div>
+                <div class="plat-card">
+                    <span class="plat-icon">📦</span>
+                    <div class="plat-name">Amazon Prime</div>
+                    <div class="plat-note">Varias entregas disponibles</div>
+                </div>
+                <div class="plat-card">
+                    <span class="plat-icon">🎬</span>
+                    <div class="plat-name">Filmin</div>
+                    <div class="plat-note">Catálogo español completo</div>
+                </div>
+                <div class="plat-card">
+                    <span class="plat-icon">▶️</span>
+                    <div class="plat-name">Rakuten TV</div>
+                    <div class="plat-note">Alquiler y compra digital</div>
+                </div>
+                <div class="plat-card">
+                    <span class="plat-icon">🎥</span>
+                    <div class="plat-name">Movistar+</div>
+                    <div class="plat-note">Disponible en catálogo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- ── DISFRAZ & CURIOSIDADES ─────────────── -->
+    <section class="section" id="disfraz">
+        <div class="wrap">
+            <div class="section-label">Cultura popular</div>
+            <h2 class="section-title">El disfraz de <span>Torrente</span></h2>
+
+            <div class="disfraz-grid">
+                <div>
+                    <p class="disfraz-intro">
+                        El disfraz de Torrente es uno de los más reconocibles del carnaval español.
+                        Estos son los elementos que no pueden faltar para completar el look:
+                    </p>
+                    <ul class="disfraz-list">
+                        <li>
+                            <span>👔</span>
+                            <span>Camiseta ajustada o polo de colores llamativos, a ser posible con manchas visibles</span>
+                        </li>
+                        <li>
+                            <span>🕶️</span>
+                            <span>Gafas de sol baratas — las icónicas "gafas Torrente" son indispensables</span>
+                        </li>
+                        <li>
+                            <span>🏅</span>
+                            <span>Placa de policía falsa colgada del cuello o en el cinturón</span>
+                        </li>
+                        <li>
+                            <span>🍺</span>
+                            <span>Cerveza en mano en todo momento — sin esto no eres Torrente</span>
+                        </li>
+                        <li>
+                            <span>🪥</span>
+                            <span>Palillo en la boca: el elemento más característico del personaje</span>
+                        </li>
+                        <li>
+                            <span>🇪🇸</span>
+                            <span>Chapas, pins o banderas de España visibles en la ropa</span>
+                        </li>
+                        <li>
+                            <span>⚽</span>
+                            <span>Bufanda o camiseta del Atlético de Madrid para los más puristas</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="display:flex; align-items:stretch;">
+                    <img src="fondo web.webp" alt="Torrente" style="width:560px; object-fit:cover; object-position:center top; border-left:3px solid var(--rojo);">
+                </div>
+            </div>
+
+            <div class="curiosidad-row" style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin-top:3rem;">
+                <div class="curiosidad-card">
+                    <h4>El origen del personaje</h4>
+                    <p>Santiago Segura creó a Torrente después de observar a un hombre grosero en un restaurante chino de Madrid. Un tipo desordenado, orgulloso de su ignorancia y sin ningún rasgo de empatía. Lo que empezó como un sketch se convirtió en la saga de cine español más taquillera de todos los tiempos.</p>
+                </div>
+                <div class="curiosidad-card">
+                    <h4>Carabanchel como escenario</h4>
+                    <p>El barrio madrileño de Carabanchel es casi un personaje más de la saga. Torrente personifica el imaginario del sur obrero de Madrid: realidad sin filtros, sin modernismos y sin complejos.</p>
+                </div>
+                <div class="curiosidad-card">
+                    <h4>El peso ganado para el papel</h4>
+                    <p>Para encarnar a Torrente, Santiago Segura engordó entre 20 y 30 kilos. El físico del personaje —barrigón, sudoroso, desgarbado— es parte fundamental de la comedia y de la identidad visual del personaje.</p>
+                </div>
+                <div class="curiosidad-card">
+                    <h4>Récords históricos de taquilla</h4>
+                    <p>Las dos primeras entregas batieron los récords históricos del cine español en sus respectivos años de estreno. La saga ha recaudado más de 100 millones de euros en total a lo largo de sus seis películas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ──────────────────────────────── -->
+    <footer>
+        <div class="footer-logo">TORRENTE</div>
+        <p class="footer-text">
+            Web informativa sobre la saga Torrente de Santiago Segura.<br>
+            Todos los derechos de los films pertenecen a Amiguetes Entertainment / Filmax.<br>
+            Este sitio no tiene relación oficial con los titulares de los derechos.
+        </p>
+        <p class="footer-keywords">
+            torrente · torrente 6 · torrente presidente · santiago segura · jose luis torrente
+            · torrente el brazo tonto de la ley · saga torrente · personajes torrente · donde ver torrente
+            · disfraz torrente · torrente reparto · películas de torrente
+        </p>
+        <p class="footer-text" style="margin-top:1.5rem; font-size:0.8rem; opacity:0.5;">
+            <a href="aviso-legal.html" style="color:inherit;">Aviso legal</a> ·
+            <a href="politica-privacidad.html" style="color:inherit;">Política de privacidad</a> ·
+            <a href="politica-cookies.html" style="color:inherit;">Política de cookies</a>
+        </p>
+    </footer>
+
+    <script>
+    (function () {
+        var target = new Date('2026-03-13T00:00:00');
+        var cdEl = document.getElementById('idx-countdown');
+        var okEl = document.getElementById('idx-estreno');
+        var hEl  = document.getElementById('idx-cd-h');
+        var mEl  = document.getElementById('idx-cd-m');
+        var sEl  = document.getElementById('idx-cd-s');
+        function pad(n) { return String(n).padStart(2, '0'); }
+        function tick() {
+            var diff = target - Date.now();
+            if (diff <= 0) {
+                cdEl.style.display = 'none';
+                okEl.style.display = 'flex';
+                return;
+            }
+            var h = Math.floor(diff / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            hEl.textContent = pad(h);
+            mEl.textContent = pad(m);
+            sEl.textContent = pad(s);
+            setTimeout(tick, 1000);
+        }
+        tick();
+    })();
+    </script>
+</body>
+</html>
