@@ -118,88 +118,6 @@
             .t6-img-caption { border-left: none; border-top: 3px solid var(--rojo); }
         }
 
-        /* ── CUENTA ATRÁS ── */
-        .t6-countdown-section {
-            background: var(--asfalto);
-            border-top: 3px solid var(--rojo);
-            border-bottom: 3px solid var(--rojo);
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .t6-countdown-label {
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: rgba(230,225,210,0.6);
-            margin-bottom: 1.2rem;
-        }
-
-        .t6-countdown-timer {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 0;
-        }
-
-        .t6-cd-unit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 100px;
-        }
-
-        .t6-cd-num {
-            font-family: 'Anton', sans-serif;
-            font-size: clamp(3rem, 10vw, 6rem);
-            line-height: 1;
-            color: var(--blanco-sucio);
-            letter-spacing: 0.02em;
-        }
-
-        .t6-cd-sep {
-            font-family: 'Anton', sans-serif;
-            font-size: clamp(3rem, 10vw, 6rem);
-            line-height: 1;
-            color: var(--rojo);
-            padding: 0 0.3rem;
-            margin-top: -0.05em;
-        }
-
-        .t6-cd-lbl {
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--texto-dim);
-            margin-top: 0.4rem;
-        }
-
-        /* Estado: ha llegado el día */
-        .t6-estreno {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .t6-estreno-icon { font-size: 3rem; }
-
-        .t6-estreno-titulo {
-            font-family: 'Anton', sans-serif;
-            font-size: clamp(1.8rem, 5vw, 3.5rem);
-            color: var(--blanco-sucio);
-            letter-spacing: 0.03em;
-        }
-
-        .t6-estreno-fecha {
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--cerveza);
-        }
 
         /* ── DÓNDE VER ── */
         .t6-donde-ver {
@@ -233,8 +151,6 @@
         .t6-donde-desc strong { color: var(--cerveza); font-weight: 700; }
 
         @media (max-width: 600px) {
-            .t6-countdown-timer { gap: 0; }
-            .t6-cd-unit { min-width: 70px; }
             .t6-donde-ver { flex-direction: column; text-align: center; }
         }
     </style>
@@ -256,7 +172,7 @@
             <div class="peli-badges">
                 <span class="badge badge-num">Película 6</span>
                 <span class="badge badge-year">2026</span>
-                <span class="badge badge-new">⚡ En cartelera</span>
+                <span class="badge badge-new">⚡ Ya en cines</span>
                 <span class="badge badge-genre">Comedia política</span>
             </div>
             <h1 class="peli-hero-title">Torrente<br>Presidente</h1>
@@ -270,37 +186,6 @@
         </div>
     </header>
 
-    <!-- CUENTA ATRÁS -->
-    <div class="t6-countdown-section">
-        <div class="wrap">
-            <div class="t6-countdown-label">Estreno oficial en cines</div>
-
-            <!-- Contador activo -->
-            <div class="t6-countdown-timer" id="t6-countdown">
-                <div class="t6-cd-unit">
-                    <span class="t6-cd-num" id="cd-h">00</span>
-                    <span class="t6-cd-lbl">horas</span>
-                </div>
-                <span class="t6-cd-sep">:</span>
-                <div class="t6-cd-unit">
-                    <span class="t6-cd-num" id="cd-m">00</span>
-                    <span class="t6-cd-lbl">min</span>
-                </div>
-                <span class="t6-cd-sep">:</span>
-                <div class="t6-cd-unit">
-                    <span class="t6-cd-num" id="cd-s">00</span>
-                    <span class="t6-cd-lbl">seg</span>
-                </div>
-            </div>
-
-            <!-- Mensaje de estreno -->
-            <div class="t6-estreno" id="t6-estreno">
-                <span class="t6-estreno-icon">🎬</span>
-                <div class="t6-estreno-titulo">¡Amiguetes, ha llegado el día!</div>
-                <div class="t6-estreno-fecha">13 de marzo de 2026 — Torrente Presidente ya está en cines</div>
-            </div>
-        </div>
-    </div>
 
     <!-- IMAGEN + SIN TRAILER -->
     <section class="peli-section">
@@ -500,35 +385,5 @@
         Contenido informativo · Derechos de los films: Amiguetes Entertainment / Sony Pictures
     </footer>
 
-    <script>
-        (function () {
-            var target = new Date('2026-03-13T00:00:00');
-            var cdEl   = document.getElementById('t6-countdown');
-            var okEl   = document.getElementById('t6-estreno');
-            var hEl    = document.getElementById('cd-h');
-            var mEl    = document.getElementById('cd-m');
-            var sEl    = document.getElementById('cd-s');
-
-            function pad(n) { return String(n).padStart(2, '0'); }
-
-            function tick() {
-                var diff = target - Date.now();
-                if (diff <= 0) {
-                    cdEl.style.display = 'none';
-                    okEl.style.display = 'flex';
-                    return;
-                }
-                var h = Math.floor(diff / 3600000);
-                var m = Math.floor((diff % 3600000) / 60000);
-                var s = Math.floor((diff % 60000) / 1000);
-                hEl.textContent = pad(h);
-                mEl.textContent = pad(m);
-                sEl.textContent = pad(s);
-                setTimeout(tick, 1000);
-            }
-
-            tick();
-        })();
-    </script>
 </body>
 </html>

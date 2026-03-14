@@ -818,70 +818,6 @@
             .stats-grid { grid-template-columns: 1fr 1fr; }
         }
 
-        /* ── COUNTDOWN HOME ──────────────────────── */
-        .idx-countdown-section {
-            padding: 1rem 0 1.5rem;
-        }
-        .idx-countdown-label {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: rgba(230,225,210,0.6);
-            margin-bottom: 0.75rem;
-        }
-        .idx-countdown-timer {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 0.5rem;
-        }
-        .idx-cd-unit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .idx-cd-num {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3.5rem, 10vw, 6rem);
-            color: var(--blanco-sucio);
-            line-height: 1;
-        }
-        .idx-cd-lbl {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: rgba(230,225,210,0.5);
-            margin-top: 0.25rem;
-        }
-        .idx-cd-sep {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3rem, 8vw, 5rem);
-            color: var(--rojo);
-            line-height: 1;
-            margin-bottom: 1.2rem;
-        }
-        .idx-estreno {
-            display: none;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.5rem;
-        }
-        .idx-estreno-icon { font-size: 2.5rem; }
-        .idx-estreno-titulo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            color: var(--rojo);
-            letter-spacing: 0.05em;
-        }
-        .idx-estreno-fecha {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1rem;
-            color: var(--blanco-sucio);
-            opacity: 0.8;
-        }
     </style>
 </head>
 <body>
@@ -902,21 +838,6 @@
     <header class="hero">
         <p class="hero-eyebrow">Santiago Segura — 1998 · 2026</p>
         <h1 class="hero-title">TORRENTE</h1>
-        <div class="idx-countdown-section">
-            <div class="idx-countdown-label">Torrente Presidente — Estreno 13 de marzo de 2026</div>
-            <div class="idx-countdown-timer" id="idx-countdown">
-                <div class="idx-cd-unit"><span class="idx-cd-num" id="idx-cd-h">00</span><span class="idx-cd-lbl">horas</span></div>
-                <span class="idx-cd-sep">:</span>
-                <div class="idx-cd-unit"><span class="idx-cd-num" id="idx-cd-m">00</span><span class="idx-cd-lbl">min</span></div>
-                <span class="idx-cd-sep">:</span>
-                <div class="idx-cd-unit"><span class="idx-cd-num" id="idx-cd-s">00</span><span class="idx-cd-lbl">seg</span></div>
-            </div>
-            <div class="idx-estreno" id="idx-estreno">
-                <span class="idx-estreno-icon">🎬</span>
-                <div class="idx-estreno-titulo">¡Amiguetes, ha llegado el día!</div>
-                <div class="idx-estreno-fecha">13 de marzo de 2026 — Torrente Presidente ya está en cines</div>
-            </div>
-        </div>
         <p class="hero-sub">El Brazo Tonto de la Ley</p>
         <div class="hero-line"></div>
         <p class="hero-claim">
@@ -1135,14 +1056,14 @@
                         <span class="peli-num" style="color:#fff;">6</span>
                         <div class="peli-meta">
                             <span class="peli-year" style="color:rgba(255,255,255,0.5);">2026</span>
-                            <span class="peli-estreno-tag">En cartelera</span>
+                            <span class="peli-estreno-tag">2026</span>
                         </div>
                     </div>
                     <div class="peli-body">
                         <div class="peli-titulo" style="color:var(--cerveza);">Torrente Presidente</div>
                         <div class="peli-desc">La entrega más esperada. Torrente se lanza a la política española. Santiago Segura regresa para llevar al personaje al absurdo más institucional. La campaña electoral nunca fue tan sucia.</div>
                         <div class="peli-reparto">Reparto: <strong>Santiago Segura y reparto por confirmar</strong></div>
-                        <div class="peli-taquilla" style="color:var(--cerveza);">⚡ Estreno 2026 — Torrente Presidente</div>
+                        <div class="peli-taquilla" style="color:var(--cerveza);">Ya en cines — Torrente Presidente</div>
                         <div class="peli-ver-mas" style="color:var(--cerveza);">Ver ficha completa →</div>
                     </div>
                 </a>
@@ -1286,32 +1207,5 @@
         </p>
     </footer>
 
-    <script>
-    (function () {
-        var target = new Date('2026-03-13T00:00:00');
-        var cdEl = document.getElementById('idx-countdown');
-        var okEl = document.getElementById('idx-estreno');
-        var hEl  = document.getElementById('idx-cd-h');
-        var mEl  = document.getElementById('idx-cd-m');
-        var sEl  = document.getElementById('idx-cd-s');
-        function pad(n) { return String(n).padStart(2, '0'); }
-        function tick() {
-            var diff = target - Date.now();
-            if (diff <= 0) {
-                cdEl.style.display = 'none';
-                okEl.style.display = 'flex';
-                return;
-            }
-            var h = Math.floor(diff / 3600000);
-            var m = Math.floor((diff % 3600000) / 60000);
-            var s = Math.floor((diff % 60000) / 1000);
-            hEl.textContent = pad(h);
-            mEl.textContent = pad(m);
-            sEl.textContent = pad(s);
-            setTimeout(tick, 1000);
-        }
-        tick();
-    })();
-    </script>
 </body>
 </html>
